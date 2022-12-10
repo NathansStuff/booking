@@ -1,15 +1,12 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './app/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/layouts/**/*.{js,ts,jsx,tsx}',
-  ],
+  content: ['./app/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
         primary: '#F44BB6',
+        primaryHover: '#ffa1dc',
         secondary: '#447CF9',
         secondaryDark: '#1C3177', // eg, Edit Loan Structure title
         secondaryLight: '#447cf9', // eg, Dropdown select

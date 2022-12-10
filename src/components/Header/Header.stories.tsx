@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Page } from 'src/layouts/Page';
+import { Page } from 'src/layouts/templates/Page';
 import { Header } from './Header';
 
 export default {

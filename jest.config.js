@@ -12,8 +12,7 @@ const customJestConfig = {
   moduleDirectories: ['node_modules', '<rootDir>/'],
   testEnvironment: 'jest-environment-jsdom',
   moduleNameMapper: {
-    '@components/templates': '<rootDir>/src/components/templates',
-    '@components': '<rootDir>/src/components',
+    '^@src(.*)$': '<rootDir>/src$1',
   },
   collectCoverageFrom: [
     // Included
