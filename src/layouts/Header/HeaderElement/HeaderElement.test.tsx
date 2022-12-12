@@ -1,6 +1,6 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { activeClass, HeaderElement } from './HeaderElement';
-import { mockHeaderElementInactiveProps } from './HeaderElement.mocks';
+import { mockHeaderElementActiveProps, mockHeaderElementInactiveProps } from './HeaderElement.mocks';
 
 describe('HeaderElement', () => {
   function renderBaseComponent(): void {
@@ -23,17 +23,11 @@ describe('HeaderElement', () => {
     expect(screen.getByTestId('headerElement')).toHaveTextContent(mockHeaderElementInactiveProps.title);
   });
 
-  // it('hover state changes ', () => {
-  //   // Arrange
-  //   renderBaseComponent();
-  //   const title = screen.getByText(mockHeaderElementInactiveProps.title);
-  //   expect(screen.getByText(mockHeaderElementInactiveProps.title)).not.toHaveClass(activeClass);
-
-  //   // Act
-  //   act(() => {
-  //     fireEvent.focus(title);
-  //   });
-  //   // Assert
-  //   expect(screen.getByText(mockHeaderElementInactiveProps.title)).toHaveClass(activeClass);
-  // });
+  it('active value changes className', () => {
+    // Arrange
+    render(<HeaderElement {...mockHeaderElementActiveProps} />);
+    // Act
+    // Assert
+    expect(screen.getByTestId('headerElement')).toHaveClass(activeClass);
+  });
 });

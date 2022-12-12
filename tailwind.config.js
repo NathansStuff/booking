@@ -1,7 +1,9 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./app/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -13,15 +15,21 @@ module.exports = {
         error: '#fff8e0',
         errorDark: '#FFBA00',
         success: '#27DA4C',
-        grey: '#BDBDBD',
+        grey: '#707070',
         lightGrey: '#D3D3D3',
         textPrimary: '#4E4E4E',
+
+        offWhite: '#F7F7F7',
       },
       // screens: {
       //   lg: '1190px',
       // },
       boxShadow: {
         '3xl': '0 4px 4px rgb(0 0 0 / 25%)',
+      },
+      fontFamily: {
+        primary: ['var(--cardo-font)', ...fontFamily.sans],
+        serif: ['var(--cardo-font)', ...fontFamily.serif],
       },
     },
   },
@@ -30,17 +38,7 @@ module.exports = {
     // A time consuming process, but it's worth it
     // ref: https://github.com/tailwindlabs/tailwindcss-intellisense/issues/227
     ({ addUtilities }) => {
-      addUtilities({
-        '.fieldHeading': {
-          fontFamily:
-            'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji',
-          fontSize: '32px',
-          fontWeight: 700,
-          paddingBottom: '0.25rem' /* 4px */,
-          fontSize: '0.75rem' /* 12px */,
-          lineHeight: '1rem' /* 16px */,
-        },
-      });
+      addUtilities({});
     },
   ],
 };
